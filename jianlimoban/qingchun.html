@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ForFuture-fear no more</title>
+    <link rel="shortcut icon" href="img/12.jpg">
+	
+    <style>
+        html,
+        body {
+			/*成胜文*/
+            margin: 0;
+            padding: 0;
+		width: 100%;height: 100%;
+            background-color: #29454d;
+            /*禁止文字被选中*/
+            -moz-user-select: none;
+            /*火狐*/
+            -webkit-user-select: none;
+            /*webkit浏览器*/
+            -ms-user-select: none;
+            /*IE10*/
+            -khtml-user-select: none;
+            /*早期浏览器*/
+            user-select: none;
+			/*溢出隐藏*/
+            overflow: hidden;
+        }
+
+        .box {
+            position: relative;
+            height: 500px;
+            width: 500px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            perspective: 2000px;
+        }
+
+        .di {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 200px;
+            width: 200px;
+            transform: translate(-50%, -50%) rotatex(90deg);
+            transform-style: preserve-3d;
+        }
+
+        .z {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+            /*transform: rotatez(1deg);*/
+        }
+
+        p {
+            margin: 0;
+            position: absolute;
+            top: 0;
+            /*为了保证圆心在父盒子中心，父盒子旋转时圆心稳定，所以设置left*/
+            left: 25px;
+            height: 200px;
+            width: 150px;
+            border: 2px solid #f52604;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /*opacity: .7;*/
+            font-size: 10px;
+            line-height: 200px;
+            text-align: center;
+            /*box-shadow: 0 0 100px #16ff8b;*/
+            /*倒影，不兼容*/
+            -webkit-box-reflect: below 10px -webkit-linear-gradient(top, 
+				rgba(250, 250, 250, 0), 
+				rgba(250, 250, 250, .0) 30%, 
+				rgba(250, 250, 250, 0.5)
+			);
+            box-reflect: below 10px -webkit-linear-gradient(top, 
+				rgba(250, 250, 250, 0), 
+				rgba(250, 250, 250, .0) 30%, 
+				rgba(250, 250, 250, 0.5)
+			);
+            /*backface-visibility: hidden;*/
+		body {
+				overflow: hidden;
+			}
+			
+			.heart-body {
+				width: 500px;
+				margin: 100px auto;
+				position: relative;
+			}
+			
+			.snowfall-flakes:before,
+			.snowfall-flakes:after {
+				
+				content: "cr";
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				display: block;
+				width: 20px;
+				height: 38px;
+				background: red;
+				border-radius: 50px 50px 0 0;
+			}
+			
+			.snowfall-flakes:before {
+				-webkit-transform: rotate(-45deg);
+				/* Safari 和 Chrome */
+				-moz-transform: rotate(-45deg);
+				/* Firefox */
+				-ms-transform: rotate(-45deg);
+				/* IE 9 */
+				-o-transform: rotate(-45deg);
+				/* Opera */
+				transform: rotate(-45deg);
+			}
+			
+			.snowfall-flakes:after {
+				left: 13px;
+				-webkit-transform: rotate(45deg);
+				/* Safari 和 Chrome */
+				-moz-transform: rotate(45deg);
+				/* Firefox */
+				-ms-transform: rotate(45deg);
+				/* IE 9 */
+				-o-transform: rotate(45deg);
+				/* Opera */
+				transform: rotate(45deg);
+			}
+        }
+
+.box{
+-webkit-transition-property: -webkit-transform;
+-webkit-transition-duration: 2s;
+    -moz-transition-property: -moz-transform;
+-moz-transition-duration: 2s;
+
+-webkit-animation: rotate 9s 6s infinite;
+-moz-animation: rotate 9s 6s infinite;
+-o-animation: rotate 9s 6s infinite;
+animation: rotate 9s 6s infinite;
+}
+
+@keyframes rotate{
+0%{
+-webkit-transform: rotateY(0deg);
+-moz-transform: rotateY(0deg);
+-o-transform: rotateY(0deg);
+transform: rotateY(0deg);
+}
+100%{
+-webkit-transform: rotateY(360deg);
+-moz-transform: rotateY(360deg);
+-o-transform: rotateY(360deg);
+transform: rotateY(360deg);
+}
+}
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <div class="di">
+        <div class="z">
+            <p><img src="img/psb (1).jpg" alt="psb (1).jpg" width="146px" height="196px"></p>
+			<p><img src="img/2.jpg" alt="img/2.jpg" width="146px" height="196px"></p>
+			<p><img src="img/psb (12).jpg" alt="img/psb (12).jpg" width="146px" height="196px"></p>
+			<p><img src="img/psb (13).jpg" alt="img/psb (13).jpg" width="146px" height="196px"></p>
+			<p><img src="img/psb (15).jpg" alt="img/psb (15).jpg" width="146px" height="196px"></p>
+			<p><img src="img/psb (17).jpg" alt="img/psb (17).jpg" width="146px" height="196px"></p>
+			<p><img src="img/psb (19).jpg" alt="img/psb (19).jpg" width="146px" height="196px"></p>
+			<p><img src="img/psb (5).jpg" alt="img/psb (5).jpg" width="146px" height="196px"></p>
+			<p><img src="img/psb (2).jpg" alt="img/psb (2).jpg" width="146px" height="196px"></p>
+			<p><img src="img/psb (4).jpg" alt="img/img/psb (4).jpg" width="146px" height="196px"></p>
+			<p><img src="img/psb (3).jpg" alt="img/psb (3).jpg" width="146px" height="196px"></p>
+            <p><img src="img/psb.jpg" alt="img/psb.jpg" width="146px" height="196px"></p>
+        </div>
+    </div>
+</div>
+
+<!--javascript脚本-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/JQuery-Snowfall/1.7.4/snowfall.jquery.min.js"></script>
+<script>
+			//调用飘落函数 实现飘落效果
+			$(document).snowfall({
+				flakeCount: 70 //爱心的个数
+			});
+
+			$(document).snowfall({
+				image :"img/hetun.jpg",flakeCount: 8, minSize: 20, maxSize:50,minSpeed:1,maxSpeed:5
+			});
+			$(document).snowfall({
+				image :"img/hetun1.jpg",flakeCount: 8, minSize: 20, maxSize:50,minSpeed:1,maxSpeed:5
+			});
+			$(document).snowfall({
+				image :"img/hetun2.jpg",flakeCount: 8, minSize: 20, maxSize:50,minSpeed:1,maxSpeed:5
+			});
+			
+	//入口函数 
+	window.onload=function(){
+		setPs();
+        move();
+        drop();
+	}
+
+	//入口函数 
+	$(function(){
+		var dh=$(".z p")
+		//自动将P标签旋转
+		$(".z").click(function(){			
+			function startAnimate(){
+				dh.animate({height:"300px"});
+				//dh.animate({width:"200px"});
+				//dh.animate({height:"200px"});
+				//dh.animate({width:"150px"},startAnimate);
+			}			
+		});	
+	});
+	
+   
+
+    //给每个p标签设置位置
+    function setPs() {
+        var ps = document.getElementsByTagName('p');
+        for (var i = 0; i < ps.length; i++) {
+            ps[i].style.transform = 'rotatex(-90deg) rotatey(' + i * 30 + 'deg) translatez(400px)'
+        }
+    }
+
+    //鼠标拖动旋转
+    function move() {
+        var zBox = document.querySelector('.z');
+        var xBox = document.querySelector('.di');
+        //声明计算鼠标移动速度用的变量
+        var speedTimer = null;
+        var speedX = 0;
+        var speedY = 0;
+        //声明记录旋转角度的两个变量
+        var xDegNow = 90;
+        var zDegNow = 0;
+        //声明变量记录要旋转的角度
+        var xDegDistance = 0;
+        var zDegDistance = 0;
+        //声明变量记录是否发生鼠标移动事件
+        var isMove = false;
+        window.onmousedown = function (e) {
+            //鼠标按下
+            //清除过渡属性
+            xBox.style.transition = '';
+            zBox.style.transition = '';
+            //记录按下的坐标以及计算速度的初始坐标
+            var xstart = e.clientX;
+            var speedX_start = xstart;
+            var ystart = e.clientY;
+            var speedY_start = ystart;
+            //记录用来计算速度的初始时间
+            var tstart = new Date().getTime();
+            var tnow = tstart;
+            //设置计时器更新计算速度的当时时间
+            speedTimer = setInterval(function () {
+                tnow = new Date().getTime();
+            },10)
+            window.onmousemove = function (e) {
+                //鼠标移动
+                isMove = true;
+                //记录当时的坐标计算距离
+                var xnow = e.clientX;
+                var ynow = e.clientY;
+                var xDistance = xnow - xstart;
+                var yDistance = ynow - ystart;
+                //如果计时超过一定时间（10毫秒），计算速度
+                if (tnow - tstart >= 10) {
+                    //速度=（现在的坐标-初始坐标）/（现在时间-初始时间）
+                    speedX = (xnow - speedX_start) / (tnow - tstart);
+                    speedY = (ynow - speedY_start) / (tnow - tstart);
+                    //让初始时间和坐标等于现在的时间和坐标
+                    tstart = tnow;
+                    speedX_start = xnow;
+                    speedY_start = ynow;
+                }
+                //把鼠标移动距离计算成角度后设置到页面上
+                zDegDistance = zDegNow - (xDistance / 10);
+                zBox.style.transform = 'rotatez(' + zDegDistance + 'deg)';
+                xDegDistance = xDegNow - (yDistance / 10);
+                xDegDistance = xDegDistance > 179 ? 179 : xDegDistance < 1 ? 1 : xDegDistance;
+                xBox.style.transform = 'translate(-50%,-50%) rotatex(' + xDegDistance + 'deg)';
+            };
+        };
+        window.onmouseup = function (e) {
+            //鼠标松开
+            //清除计时器 清除鼠标移动事件
+            clearTimeout(speedTimer);
+            window.onmousemove = null;
+            //判断如果发生移动
+            if (isMove) {
+                //添加过渡属性
+                xBox.style.transition = 'all 0.5s ease-out';
+                zBox.style.transition = 'all 0.5s ease-out';
+                //根据速度计算目标角度，设置到页面上
+                zDegDistance = zDegDistance - (speedX * 10);
+                zBox.style.transform = 'rotatez(' + zDegDistance + 'deg)';
+                xDegDistance = xDegDistance - (speedY * 10);
+                xDegDistance = xDegDistance > 179 ? 179 : xDegDistance < 1 ? 1 : xDegDistance;
+                xBox.style.transform = 'translate(-50%,-50%) rotatex(' + xDegDistance + 'deg)';
+                //记录当前角度的值更新
+                xDegNow = xDegDistance;
+                zDegNow = zDegDistance;
+                //用到的变量重置
+                isMove = false;
+                speedX = 0;
+                speedY = 0;
+                xDegDistance = 0;
+                zDegDistance = 0;
+            }
+        };
+
+    }
+
+
+    //鼠标拖拽文件
+    function drop() {
+        //取消鼠标拖拽文件进入窗口的默认行为
+        window.ondragover = function (e) {
+            e.preventDefault();
+        }
+        window.ondrop = function (e) {
+            e.preventDefault();
+        }
+        //添加拖拽到p标签的事件
+        var ps = document.getElementsByTagName('p');
+        for (var i = 0; i < ps.length; i++) {
+            ps[i].index = i;
+            ps[i].ondrop = function (e) {
+                var w = new FileReader();
+                w.index = this.index;
+                w.readAsDataURL(e.dataTransfer.files[0]);
+                w.onload = function () {
+                    ps[this.index].style.backgroundImage = 'url(' + w.result + ')';
+                    ps[this.index].innerHTML = '';
+                }
+            }
+        }
+    }
+
+</script>
+<script>
+$(".snowfall-flakes").click(function(){
+alert("怀念青春");
+window.open("hualang.html");
+});
+</script>
+	<embed src="http://www.ytmp3.cn/down/47026.mp3" autostart="true" hidden="true" loop="true">
+</body>
+</html>

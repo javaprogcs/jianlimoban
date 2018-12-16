@@ -1,0 +1,479 @@
+
+
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="chengshengwen">
+  <meta name="Keywords" content="ForFuture Design">
+  <meta name="Description" content="画廊">
+  <link rel="shortcut icon" href="http://ganquanzhong.top/img/favicon.ico">
+  <title>ForFuture Design</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-image:url('img/hetun2.jpg');
+			opacity: 0.9;
+		}
+		#wrap{
+			position: relative;
+			width: 100%;
+			height: 600px;			
+			perspective: 800px;
+			overflow: hidden;
+		}
+		.photo{
+			position: absolute;
+			width: 260px;
+			height: 320px;
+			z-index: 1;
+			transition: .5s;
+			left: 50%;
+			top: 50%;
+			margin: -160px 0 0 -130px;
+		}
+		.photo .photo-wrap{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			transform-style: preserve-3d;
+			transition: all .6s ease-in-out;
+			transform-origin: 0% 50% 0px;
+		}
+		.photo .photo-wrap .side{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: #eee;
+			top: 0;
+			right: 0;
+			padding: 20px;
+			box-sizing: border-box;
+			backface-visibility:hidden;
+		}
+		.photo .photo-wrap .side-front{
+            transform: rotateY(0deg);
+		}
+		.photo .photo-wrap .side-front .image{
+			width: 100%;
+			height: 250px;
+			line-height: 250px;
+			overflow: hidden;
+		}
+		.photo .photo-wrap .side-front .image img{
+			width: 100%;
+			vertical-align: middle;/*使高度不够的图片居中显示*/
+		}
+		.photo .photo-wrap .side-front .caption{
+			text-align: center;
+			font-size: 16px;
+			line-height: 50px;
+		}
+		.photo .photo-wrap .side-back{
+			 transform: rotateY(180deg);
+		}
+		.btn{
+			position: absolute;
+			width: 80%;
+			left: 10%;
+			height: 30px;
+			line-height: 30px;
+			bottom: 20px;
+			z-index: 3;
+			text-align: center;
+		}
+		.btn .i{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			cursor: pointer;
+			background-color: #93b7cf70;
+			border-radius: 50%;
+			transform: scale(.5);
+			transition: .5s;
+		}
+		.photo_center{
+			top: 50%;
+			left: 50%;
+			margin: -160px 0 0 -130px;
+			z-index: 2;
+		}
+		.btn .i_current{
+			transform: scale(1);
+		}
+		.nav .i_back{
+			background-color: #555;
+			transform: rotateY(180deg);
+		}
+		.photo_front .photo-wrap{/* .photo_front 是添加到 div.photo 的类 */
+			transform: translate(0px, 0px) rotateY(0deg);
+		}
+		.photo_back .photo-wrap{/* .photo_back 是添加到 div.photo 的类*/
+			transform: translate(260px, 0px) rotateY(180deg);
+		}
+		/*设置描述文字*/
+		.desc{
+		   color: #64a7cd;
+           font-family: '楷体';
+		   font-weight: bolder;
+		}
+	</style>
+ </head>
+ <body>
+		<div id="wrap">
+					
+		<div class="photo photo_front" onclick="turn(this)" id="photo_1" style="transform: rotate(75deg) scale(1); left: 147px; top: 179px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (1).jpg" alt=""> </p>
+			<p class="caption">时光老去</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·喜欢的歌，静静地听，喜欢的人，远远地看！<br>·爱对了是爱情，爱错了是青春。<br>·对不起是你的解脱，不代表我要原谅你的过错。<br>·想想我们曾经无关 又何必彼此为难。<br>·时光只会老去，但时光从不会欺骗我们。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_2" style="transform: rotate(64deg) scale(1); left: 174px; top: 153px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (5).jpg" alt=""> </p>
+			<p class="caption">高中</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·青春就是再近的距离，也要跑着去。<br>·青春是明知道错了，偏要任性到底！<br>·青春是纵然梦想很远，踮起脚尖就能更近一些。<br>·青春是偏要选择在愚人节告白，就算被拒绝也能笑着说愚人节快乐。<br>·青春是有话就不好好说，偏要悄悄说。<br>·青春就是爱情友情梦想和热血。因为青春，所以来得及。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_3" style="transform: rotate(-56deg) scale(1); left: 225px; top: 149px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/1.jpg" alt=""> </p>
+			<p class="caption">青春路</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·时间一点一滴地过去，流逝告别。我们慢慢地走向一个被上帝作记号的地点。<br>·旋转着的，五彩缤纷的物质世界。等价交换的，最残酷的也最公平的寒冷人间。<br>·我用十年青春，赴你最后之约!<br>·有些人 交错后就转身， 只留下背影从此不再过问。<br>·被冰封的心，无止境的休眠，我在等待为我破冰的人。<br>·此刻的别离，我们沉默不语。不经世的我们，约好下一个路口等。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_4" style="transform: rotate(-105deg) scale(1); left: 130px; top: 153px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (10).jpg" alt=""> </p>
+			<p class="caption">147班</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·不要跟最好的朋友一起谈理想。<br>·梦想是什么，梦想就是一种让你感到坚持就是幸福的东西。<br>·当才华撑不起野心的时候，只能安静读书。<br>·最大的骗子其实是我们自己，因为我们总是想改变别人，而拒绝改变自己。<br>·你知道吗 听一个人说话，不要听他说了什么，而是要听他没说什么。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_5" style="transform: rotate(-57deg) scale(1); left: 114px; top: 178px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (3).jpg" alt=""> </p>
+			<p class="caption">变成石头</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·独行太久心会变坚硬，只有爱会让它松动。<br>·痛苦的将就不如痛快的分手。<br>·在通往成功的道路上，坚持不等于缺心眼。<br>·牵手的甜蜜是短暂的,分手的痛苦是永恒的,这就是人类的宿命。<br>·人生的道路就如同内裤，每一条都是自己选的。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_6" style="transform: rotate(121deg) scale(1); left: 144px; top: 178px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/6.jpg" alt=""> </p>
+			<p class="caption">后会无期</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·我们听过无数的道理，却仍旧过不好这一生。<br>·喜欢就会放肆，但爱就是克制。<br>·每一次告别，最好用力一点。多说一句，可能是最后一句。多看一眼，可能是最后一眼。<br>·有时候，你想证明给一万个人看，到后来，你发现只得到了一个明白的人，那就够了。<br>·带不走的留不下，留不下的莫牵挂。<br>·都是你漫漫长路上，过客而已。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_7" style="transform: rotate(73deg) scale(1); left: 87px; top: 197px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/hetun.jpg" alt=""> </p>
+			<p class="caption">出现过</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·如果世界上曾经有那个人出现过，其他人都会变成将就。而我不愿意将就。<br>·你跑的那么慢，我当初是怎么让你追上的？<br>·其实等待并不可怕，可怕的是不知道何时是个尽头。<br>·向来缘浅，奈何情深;已然情深，何惧缘浅。<br>·世界上最痛苦的事，不是无能为力，而是当一切都触手可及，我却不愿伸出手去。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_8" style="transform: rotate(53deg) scale(1); left: 423px; top: 201px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (15).jpg" alt=""> </p>
+			<p class="caption">匆匆那年</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·那时候，我们以为喜欢就是永远。后来才发现，我们只有曾经，没有永远。<br>·我喜欢你 是我的 不是我的 我都喜欢<br>·在开始时毫无所谓，在结束时痛彻心扉。<br>·你可以打我，你可以骂我，但你千万不要说我没有努力过。<br>·我想从这里开始重新来过，和之前不一样的重新来过。<br>·既然已匆匆，不如早怀念。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_9" style="transform: rotate(78deg) scale(1); left: 339px; top: 200px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="images/hetun2.jpg" alt=""> </p>
+			<p class="caption">同桌的妳</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·时间太长 我怕等不到你，距离太远 我怕追不上你，爱情太沉 我怕放不下你。<br>·这是我们两个人的事，我一个人办不到。<br>·总有一天，我会带你去只有我们两个人的地方。<br>·记忆总是喜欢添油加醋，它会朝着你期待的方向修改，当你欣喜若狂的时候，真相，会将你惊醒。<br>·总有一天，我会带你去只有我们两个人的地方。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_10" style="transform: rotate(-33deg) scale(1); left: 160px; top: 193px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (6).jpg" alt=""> </p>
+			<p class="caption">青春</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·人的一生只有一次青春。<br>·现在，青春是用来奋斗的；<br>·将来，青春是用来回忆的。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_11" style="transform: rotate(-142deg) scale(1); left: 1167px; top: 113px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (11).jpg" alt=""> </p>
+			<p class="caption">千与千寻</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·人生就是一列开往坟墓的列车，路途上会有很多站，很难有人可以自始至终陪着走完。当陪你的人要下车时，即使不舍也该心存感激，然后挥手道别。<br>·曾经发生过的事情不可能忘记，只不过是想不起而已。<br>·人永远不知道，谁哪次不经意的跟你说了再见之后，就真的不会再见了。<br>·我只能送你到这里了，剩下的路你要自己走，不要回头。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_12" style="transform: rotate(16deg) scale(1); left: 883px; top: 119px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (8).jpg" alt=""> </p>
+			<p class="caption">伴我同行</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·我一直在，守着你的天真和笑容。<br>·你总是这样轻言放弃的话，无论多久都只会原地踏步。<br>·一开始做不到的事就别吹牛啊！总是依靠我依靠我怎么行啊！偶尔也自己努力一下试试啊！<br>·</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_13" style="transform: rotate(-146deg) scale(1); left: 985px; top: 210px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/20.jpg" alt=""> </p>
+			<p class="caption">停留</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·爱就是把某个人看得比你自己重要。<br>·你必须先结束一段不对的感情，才能发现那个最适合你的人。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_14" style="transform: rotate(-79deg) scale(1); left: 983px; top: 151px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/10.jpg" alt=""> </p>
+			<p class="caption">超能陆战队</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·我长成这样是为了让人看起来更想拥抱。<br>·如果你生气了，就欺负我好了，反正我那么喜欢你。<br>·相信我，就算有一天，我们不小心走散，我也会回来找你的。<br>·为了你，我什么都会去做。只是有时候我笨手笨脚的，能不能不要怪我呢。<br>·我们有时并不想成为英雄，只是生活有时候超出我们的想象。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_15" style="transform: rotate(-24deg) scale(1); left: 907px; top: 188px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (16).jpg" alt=""> </p>
+			<p class="caption">漂泊</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·旅行是一种生活方式。<br>·一个旅行者，他的生活总是处于出发与抵达之间。<br>·从哪儿来到哪儿去都无所谓，重要的是持未知态度，在漂泊中把握自己，对，一无所有地漂泊。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_16" style="transform: rotate(-52deg) scale(1); left: 1309px; top: 102px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (2).jpg" alt=""> </p>
+			<p class="caption">远航</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·每当人远航归来，他总有故事可说。<br>·你装过头了 其实内在是一颗破碎的心。<br>·蹩脚的谎话 我甚至都不喜欢她</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_17" style="transform: rotate(-75deg) scale(1); left: 1166px; top: 154px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/hetun.jpg" alt=""> </p>
+			<p class="caption">这很nice</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·我知道这希望渺茫，但是我总得尝试下<br>·不，你想错了，他在乎的不是你的外表，他看重的是你的灵魂。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_18" style="transform: rotate(-71deg) scale(1); left: 983px; top: 200px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/hetun13.jpg" alt=""> </p>
+			<p class="caption">河豚</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·人生本来如此：喜欢的事自然可以坚持，不喜欢的怎么也长久不了。<br>·You cannot fly if you never try.</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front" onclick="turn(this)" id="photo_19" style="transform: rotate(-69deg) scale(1); left: 1023px; top: 197px;">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/psb (12).jpg" alt=""> </p>
+			<p class="caption">老男孩</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·成长似乎就是不断发现，那些让自己魂牵梦绕的东西，原来都是一场场幻想，然后一次次从梦里醒过来，而现实从来连一点商量的余地都没有。<br>·如果你的梦想还没有实现,说明你的渴望还不够强烈!<br>·丢掉什么不重要，关键是找回来什么。<br>·生活就像镜子 你笑它就笑 你哭它就哭。</p>
+		</div>
+	</div>
+</div>
+<div class="photo photo_front photo_center" onclick="turn(this)" id="photo_20" style="transform: scale(1.3);">
+	<div class="photo-wrap">
+		<div class="side side-front">
+			<p class="image"> <img src="img/7.jpg" alt=""> </p>
+			<p class="caption">憧憬</p>
+		</div>
+		<div class="side side-back">
+			<p class="desc">·当人们做不到一些事情的时候，他们就会对你说你也同样不能。<br>·如果你有梦想的话，就要去捍卫它。<br>·当你最认为困难的时候，其实就是你最接近成功的时候。<br>·机会总是留给有准备的人，但那往往是努力的人剩下来的。<br></p>
+		</div>
+	</div>
+</div>
+<div class="btn"><span id="btn_1" onclick="turn(g('#photo_1'))" class="i"></span><span id="btn_2" onclick="turn(g('#photo_2'))" class="i"></span><span id="btn_3" onclick="turn(g('#photo_3'))" class="i"></span><span id="btn_4" onclick="turn(g('#photo_4'))" class="i"></span><span id="btn_5" onclick="turn(g('#photo_5'))" class="i"></span><span id="btn_6" onclick="turn(g('#photo_6'))" class="i"></span><span id="btn_7" onclick="turn(g('#photo_7'))" class="i"></span><span id="btn_8" onclick="turn(g('#photo_8'))" class="i"></span><span id="btn_9" onclick="turn(g('#photo_9'))" class="i"></span><span id="btn_10" onclick="turn(g('#photo_10'))" class="i"></span><span id="btn_11" onclick="turn(g('#photo_11'))" class="i"></span><span id="btn_12" onclick="turn(g('#photo_12'))" class="i"></span><span id="btn_13" onclick="turn(g('#photo_13'))" class="i"></span><span id="btn_14" onclick="turn(g('#photo_14'))" class="i"></span><span id="btn_15" onclick="turn(g('#photo_15'))" class="i"></span><span id="btn_16" onclick="turn(g('#photo_16'))" class="i"></span><span id="btn_17" onclick="turn(g('#photo_17'))" class="i"></span><span id="btn_18" onclick="turn(g('#photo_18'))" class="i"></span><span id="btn_19" onclick="turn(g('#photo_19'))" class="i"></span><span id="btn_20" onclick="turn(g('#photo_20'))" class="i i_current"></span></div>
+</div>
+		<script type="text/javascript" src='js/data.js'></script>
+		<script type="text/javascript">
+			function addPhotos(){
+				var box='';
+				var _btn='';
+				for(var i=0;i<data.length;i++){
+					box+='<div class="photo photo-front" onclick="turn(this)" id="photo_'+(i+1)+'">\
+							<div class="photo-wrap">\
+								<div class="side side-front">\
+									<p class="image">\
+										<img src="images/'+ data[i].img +'" alt="" />\
+									</p>\
+									<p class="caption">' + data[i].caption + '</p>\
+								</div>\
+								<div class="side side-back">\
+									<p class="desc">' + data[i].desc +'</p>\
+								</div>\
+							</div>\
+						</div>';
+						_btn+='<span id="btn_'+(i+1)+'" onclick="turn(g(\'#photo_' + (i + 1) + '\'))" class="i"></span>'
+				}
+					var navigation = '<div class="btn">' + _btn + '</div>'
+					g('#wrap').innerHTML += box + navigation ;
+					rsort(random([1,data.length]));
+			}
+			addPhotos();
+			
+			function rsort(n){
+				var photos=[];
+				var _photo=g('.photo');
+				for(var i=0;i<_photo.length;i++){
+					_photo[i].className = 'photo photo_front';
+					_photo[i].style.left='';
+					_photo[i].style.top='';
+					_photo[i].style.transform='scale(1.3)';
+					photos.push(_photo[i]); 
+				}
+				
+				var photo_center=g("#photo_"+n);
+				photo_center.className += ' photo_center';
+
+				photo_center = photos.splice(n-1, 1);
+				//console.log(photo_center);
+				//console.log(photos);
+				var photo_left=photos.splice(0, Math.ceil(photos.length / 2));
+				var photo_right=photos;
+				var ranges=range();
+				for (var j=0;j<photo_left.length ;j++ )
+				{
+					photo_left[j].style.left=random(ranges.left.x) + 'px';
+					photo_left[j].style.top=random(ranges.left.y) + 'px';
+					photo_left[j].style.transform='rotate('+random([-150,150])+'deg) scale(1)';
+				}
+
+				for (var k=0;k<photo_right.length ;k++ )
+				{
+					photo_right[k].style.left=random(ranges.right.x) + 'px';
+					photo_right[k].style.top=random(ranges.right.y) + 'px';
+					photo_right[k].style.transform='rotate('+random([-150,150])+'deg) scale(1)';
+				}
+
+				var btns = g('.i');
+                for(var s = 0; s < btns.length; s++){
+                    btns[s].className = 'i';
+                }
+				g('#btn_' + n).className += ' i_current';
+			}
+			
+			
+			function range(){
+				var range={
+					left:{
+						x : [],
+						y : []
+					},
+					right:{
+						x : [],
+						y : []
+					}
+				};
+				var wrap={
+					width : g('#wrap').clientWidth,
+					height : g('#wrap').clientHeight
+				};
+				var photo={
+					width : g('.photo')[0].clientWidth,
+					height : g('.photo')[0].clientHeight
+				};
+
+				range.left.x=[0 - photo.width / 4 + 130, wrap.width / 2 - photo.width * 5 / 4 + 130];
+				range.left.y=[0 - photo.height / 4 + 160, wrap.height/2 - photo.height * 3 / 4 + 160];
+				range.right.x=[wrap.width / 2 + photo.width / 4 + 130, wrap.width - photo.width / 4 + 130];
+				range.right.y=range.left.y;
+
+				return range;
+			}
+
+			function turn(elem){
+                var cls = elem.className;
+                var n = elem.id.split('_')[1];//var n = elem.id.substr(-1, 1)，但是不推荐 substr;
+                if(!/photo_center/.test(cls)){//判断当前点击的元素是不是 photo_center，不是的话不执行后面的翻转而进行海报排序
+                    return rsort(n);
+                }
+                if(/photo_front/.test(cls)){
+                    cls = cls.replace(/photo_front/, 'photo_back');
+                    g('#btn_' + n).className += ' i_back';//同时处理控制按钮
+                } else{
+                    cls = cls.replace(/photo_back/, 'photo_front');
+                    g('#btn_' + n).className = g('#btn_' + n).className.replace(/\s*i_back\s*/, ' ');//同时处理控制按钮
+                }
+
+                elem.className = cls;
+            }
+			function g(selector){
+                return selector.substring(0, 1) == '.' ? document.getElementsByClassName(selector.substring(1)) : document.getElementById(selector.substring(1));
+            }
+			function random(range){
+				var min=Math.min(range[0],range[1]);
+				var max=Math.max(range[0],range[1]);
+				var diff=max-min;
+				var number= Math.round(Math.random() * diff) + min;
+				return number;
+			}
+			
+		</script>
+		<!---我们的时光-->
+		<embed src="http://up.mcyt.net/?down/39848.mp3" hidden="true" autostart="true" loop="1" starttime="00:10" pausebutton="true" >
+	</body>
+</html>
